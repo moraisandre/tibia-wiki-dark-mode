@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Tibia Wiki Dark Mode",
+  "description": "Ativa o modo escuro no Tibia Wiki para melhor legibilidade e conforto visual",
+  "version": "1.0",
+  "omnibox": {
+    "keyword": "tibia wiki modo escuro night dark mode darkmode"
+  },
+  "icons": {
+    "16": "icons/twdm_icon16.png",
+    "48": "icons/twdm_icon48.png",
+    "128": "icons/twdm_icon128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_icon": "icons/twdm_icon48.png",
+    "default_title": "Tibia Wiki Dark Mode"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.tibiawiki.com.br/*"
+      ],
+      "js": [
+        "js/replace-css.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.png",
+        "css/night-mode.css"
+      ],
+      "matches": [
+        "*://www.tibiawiki.com.br/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://www.google.com;"
+  }
+}
