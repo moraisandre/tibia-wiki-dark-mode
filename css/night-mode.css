@@ -197,8 +197,24 @@ table[style*="background-color:#EEF6FA"] {
     color: #eaeaea !important;
 }
 
-td[style*="background-color:#F7F7F7;"] {
+td[style*="background-color:#F7F7F7;"],
+select,
+input {
     background: #4a4a4a !important;
+    color: #eaeaea !important;
+}
+
+.dpl-filter-bar {
+    background: #2d2d2d !important;
+    color: #eaeaea !important;
+}
+
+div[style*="color:#2a4055;"] {
+    color: #eaeaea !important;
+}
+
+.oo-ui-menuSelectWidget {
+    background: #2b2b2b !important;
     color: #eaeaea !important;
 }
 
@@ -234,7 +250,7 @@ input::placeholder {
 
 .tocnumber,
 div,
-div #mw-fr-revisiontag {
+div #mw-fr-revisionta {
     color: #e4e4e4;
 }
 
